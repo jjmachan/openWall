@@ -11,14 +11,20 @@ def hello_world(name=None):
 @app.route('/')
 def index():
     return 'Index'
-
-@app.route('/<username>')
+@app.route('/search')
+def search():
+    return 'you can search for people here'
+@app.route('/home/<username>')
 def userviews(username):
     return 'hello %s' % username
 
-@app.route('/post/<int:post_id>')
-def posts(post_id):
+@app.route('/<username>/<int:post_id>')
+def posts(username, post_id):
     return 'This is post %d' % post_id
+
+@app.route('/<username>')
+def profile(username):
+    return 'This is %s ' %username
 
 if __name__ == 'main':
     app.run(debug=True)
