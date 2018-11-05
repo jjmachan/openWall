@@ -1,0 +1,19 @@
+create table USER(
+    username varchar(50),
+    pw varchar(50),
+    firstname varchar(100),
+    lastname varchar(100),
+    dob date,
+    sex varchar(20),
+    aboutme varchar(200),
+    curr_location varchar(50),
+    img varchar(500)
+);
+
+create table POST(
+    postid varchar(100),
+    username varchar(50),
+    timestmp timestamp,
+    likes int
+    postdescpt varchar(200)
+);
